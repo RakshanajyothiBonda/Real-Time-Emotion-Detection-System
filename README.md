@@ -1,80 +1,67 @@
-# MoodLens — Real-Time Emotion Detection System
+﻿# MoodLens – Real-Time Emotion Detection System
 
-A Python desktop application that uses a webcam and DeepFace to estimate facial expressions, save session records, and review simple analytics.
-
-## What's improved
-
-- A modern desktop home screen with clear navigation and quick actions.
-- At-a-glance counts, most frequent emotion, latest activity, and recent log entries.
-- A simpler analytics window with emotion counts and distribution bars.
-- More reliable script launching using the current Python interpreter and project folder.
-- Cross-platform CSV opening where supported.
-- Clear note that emotion labels are estimates, not diagnoses.
+MoodLens is a Python desktop application that uses a webcam and DeepFace to estimate facial expressions in real time. It records detection results and provides an analytics dashboard with PDF report generation.
 
 ## Features
+- Live webcam feed inside the desktop application
+- Face detection and emotion estimation
+- Emotion labels and confidence scores
+- Stabilized emotion predictions
+- Automatic CSV logging
+- Emotion analytics dashboard
+- Emotion distribution and confidence trend charts
+- PDF reports with summary statistics
+- Start and stop detection controls
 
-- Real-time webcam-based facial emotion estimation
-- Emotion confidence values
-- CSV activity log (`emotion_log.csv`)
-- Screenshot capture (existing behavior)
-- Emotion analytics
-- PDF report generation (existing script)
+## Technologies Used
+- Python
+- Tkinter
+- OpenCV
+- DeepFace
+- Pandas
+- Matplotlib
+- ReportLab
 
 ## Requirements
+- Windows 10 or Windows 11
+- Python 3.10
+- Working webcam
 
-- Python 3.10 or 3.11 recommended
-- A working webcam
-- Packages listed in `requirements.txt`
+## Installation
 
-## Setup (Windows PowerShell)
+    git clone https://github.com/RakshanajyothiBonda/Real-Time-Emotion-Detection-System.git
+    cd Real-Time-Emotion-Detection-System
+    py -3.10 -m venv .venv
+    .\.venv\Scripts\Activate.ps1
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
 
-```powershell
-git clone https://github.com/RakshanajyothiBonda/Real-Time-Emotion-Detection-System.git
-cd Real-Time-Emotion-Detection-System
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-python main.py
-```
+## Run the Application
 
-If PowerShell blocks activation, you can run the environment's Python directly: `.venv\Scripts\python.exe main.py`.
+    python main.py
 
-For an existing local clone, do not clone again. Open its folder, activate your environment, install the requirements, and run `python main.py`.
+## Project Files
+- main.py – Main desktop application
+- dashboard.py – Analytics dashboard and PDF report functionality
+- deepface_emotion.py – Webcam-based emotion detection
+- emotion_detector.py – Emotion detection support
+- generate_report.py – PDF report generation
+- login.py – Demo login functionality
+- requirements.txt – Required packages
 
-## Main controls
+## Data and Reports
 
-- **Start detection** launches `deepface_emotion.py` in a separate window. Press `q` in the webcam window to stop.
-- **Analytics** opens a summary of saved emotion counts.
-- **Emotion log** opens the CSV in your default spreadsheet/text application.
-- **Generate PDF report** runs `generate_report.py`.
+Detection records are stored locally in emotion_log.csv. Generated reports and screenshots are saved in their respective folders.
 
-## Project files
+## Important Notes
 
-- `main.py` — desktop home screen
-- `deepface_emotion.py` — webcam detection, screenshot capture, and CSV logging
-- `dashboard.py` — analytics window
-- `generate_report.py` — PDF report generation
-- `emotion_log.csv` — local session records
-- `screenshots/` — saved example/session screenshots
-- `reports/` — generated PDF reports
+- Allow webcam access when prompted.
+- Initial DeepFace setup may take some time.
+- Emotion results are estimates based on visible facial expressions, not a person's actual internal emotional state.
+- This project is for educational purposes and is not a medical diagnostic tool.
+- Login functionality is for demonstration only.
 
-## Important notes
+## Author
+Bonda Rakshana Jyothi
 
-- Webcam access must be permitted by the operating system.
-- DeepFace/TensorFlow dependencies may take time to install and may behave differently across Python versions. If installation fails, use Python 3.10 or 3.11 in a fresh virtual environment.
-- This project estimates visible facial expressions; it cannot reliably determine a person's true internal emotional state. Do not use its output for medical, employment, educational, or other high-stakes decisions.
-- `login.py` is a basic demo login only, not production-grade authentication.
-
-## Updating the existing GitHub repository
-
-After testing locally, review the changes and push them to the same repository:
-
-```powershell
-git status
-git add main.py dashboard.py README.md requirements.txt
-git commit -m "Improve desktop UI and analytics"
-git push
-```
-
-If you use a different branch, push the current branch with `git push origin <branch-name>`. Keep your existing `.git` folder when updating your local clone; do not initialize a new repository inside it.
+GitHub: https://github.com/RakshanajyothiBonda

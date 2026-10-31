@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.log
+emotion_log.csv
+reports/*.pdf
+screenshots/*.jpg
+screenshots/*.jpeg
+screenshots/*.png
+.DS_Store
+Thumbs.db
